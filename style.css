@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+/*          Menu Burger           */
+/* La div.menu est en position fixe. Cette position fonctionne comme une position absolute
+fixed : l'élément est retiré du flux du document comme des éléments en position absolue. 
+En fait, ils se comportent presque de la même manière qu'un élément en position absolute, sauf que les éléments à position fixed sont toujours relatifs au document, pas à un parent particulier, et ne sont pas affectés par le défilement sur une page. */
+.menu{
+    display:none;  
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color:transparent;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;    /* définition du type de curseur */
+    transition: 0.3s;
+    z-index: 9999;    /* Priorité haute */
+}
+.menu span{    /* Position absolute par rapport à son parent qui est.menu */
+    position: absolute;
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+/* trait horizontal placé au milieu de la div.menu */
+    transform: translate(-50%,-50%);
+    transition: 0.3s;
+}
+.menu span:before{    /* trait horizontal toujours dans la div.menu, qui sera placé avant (before) le trait horizontal du milieu */
+    content: '';
+    position: absolute;
+    top: -8px;
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    transition: 0.3s;
+}
+.menu span:after{    /* trait horizontal toujours dans la div.menu, qui sera placé après (after) le trait horizontal du milieu */
+    content: '';
+    position: absolute;
+    top: 8px;
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    transition: 0.3s;
+}
+.menu.active span{    /* Pour la classe active sur le menu, on rend transparent la couleur du trait horizontal central afin de ne plus le voir*/
+    background-color: transparent; 
+}
+.menu.active span:before{    /* Toujours sur la classe active on procède à une rotation sur l'élémént avant et après ce qui nous permettra d'obtenir la croix */
+    transform: rotate(45deg);
+    top: 0; 
+}
+.menu.active span:after{ 
+    transform: rotate(-45deg);
+    top: 0; 
+}
+
+
+/*            Header              */
+header{
+    background: linear-gradient(90deg, #9D84B7 5%, #22577E 53.65%, #01D1FF 100%);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0em 2em;
+    position: relative;
+}
+h1{
+    font-size: larger;
+}
+/* La nav contenant la ul est en position absolute et se place en dessous la div du bouton .menu, qui est en position fixed.
+La position absolute nous permettra dde déplacer la nav.
+Etant donné que je veux la faire apparaître par le haut, je lui indique une valeur négative qui placera l'élément à -800% de la fenêtre  */
+header .nav {
+    background-color: transparent;
+    position: relative;
+    width: 70%;
+    height: auto;
+}
+/* Ici on lui a rajoutée la classe active en plaçant l'élément à -100%. 
+Donc la nav passera de - 800% à -100% quand cette classe sera activée */
+header .nav.active{ 
+    transform: translateX(0%);
+    transition: 0.5s; 
+}
+.nav .list{
+    display: flex;
+    list-style-type: none;
+    justify-content: right;
+}
+.nav .list li a{  
+    background-color:transparent;
+    transition: 0.5s;
+    display: block;
+    font-size: medium;
+    text-decoration: none;
+    color: #fff;
+    padding: 0em 1em;
+    height: 50px;
+    line-height: 50px;
+    letter-spacing: 1px;
+}
+
+/*             Banner             */
+.banner{
+    min-height: 90vh;
+    background:  linear-gradient(71.62deg, rgba(157, 132, 183, 0.5) 24.2%, rgba(34, 87, 126, 0.5) 65.27%, rgba(46, 198, 246, 0.5) 100.02%), url(Figma/Wexim/unsplash_A6UK4MpjhDEwexim_img.png) no-repeat center;
+}
+.title{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    text-align: center;
+    color: #fff;
+}
+.title span::before{
+    content: "\A";
+    white-space: pre;
+}
+.title span::after{
+    content: "\A";
+    white-space: pre;
+}
+.title span{
+    font-weight: 900;
+    font-size: 60px;
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+}
+main div h2{
+    font-weight: 100;
+    font-size: 60px;
+}
+.un{
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    left: 46%;
+    top: 65%;
+    background: white;
+    border-radius: 50%;
+}
+.deux{
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    left: 48%;
+    top: 65%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+.trois{
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    left: 50%;
+    top: 65%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+/*             About¹             */
+.about{
+    background: #D5D5D5;
+    display: flex;
+    flex-direction: column;
+    padding: 10% 14%;
+    width: 100%;
+    position: relative;
+}
+.about h4{
+    padding-bottom: 1em;
+    color: #22577E;
+}
+.ab{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.ab h3{
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 45px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    width: 25%;
+}
+.pa{
+    position: absolute;
+    right: 14%;
+    width: 30%;
+}
+.ab .pa p{
+    padding-bottom: 2em;
+    font-size: 18px;
+}
+.design{
+    display: flex;
+    flex-direction: row;
+    padding-top: 7em;
+    gap: 6em;
+}
+.abt h4{
+    margin: 1em 0;
+}
+
+/*             About²             */
+.About{
+    position: relative;
+    min-height: 80vh;
+    background: linear-gradient(71.62deg, rgba(157, 132, 183, 0.5) 24.2%, rgba(34, 87, 126, 0.5) 65.27%, rgba(46, 198, 246, 0.5) 100.02%), url(Figma/Wexim/bureau.png);
+}
+.About img{
+    vertical-align: top;
+    width: 100%;
+}
+.beginning{text-align: center;}
+.beginning p{margin: auto;}
+.titl{
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    color: white;
+}
+.titl h4{
+    font-size: 24px;
+    font-weight: normal;
+}
+.titl h3{
+    width: 70%;
+    color: #9D84B7;
+    font-size: 43px;
+    font-weight: 900;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    padding: 1% 0 1em ;
+}
+.titl p{
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    width: 80%;
+}
+
+/*              Team              */
+.team{
+    background: #D5D5D5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.team h4{
+    padding-top: 5%;
+    font-size: 20px;
+}
+.team h3{
+    color: #22577E;
+    font-weight: 900;
+    font-size: 4em;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    padding: 1%;
+}
+.team p{
+    width: 34%;
+    font-size: 20px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 5%;
+}
+.team article{
+    padding-bottom: 10%;
+    /* display: flex; */
+}
+.team article figure{
+    background-color: #ffffff;
+    padding: 1em;
+    margin: 1em;
+}
+.team article figure h3{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 30px;
+    padding-top: 5%;
+}
+.team article figure h4{
+    text-align: center;
+    font-size: 14px;
+    padding: 0 0 10%;
+}
+.mesure{
+    display: flex;
+    justify-content: space-between;
+}
+#bar{
+    background: rgba(221, 223, 223, 0.3);
+    border-radius: 10px;
+    margin: 2% 0 10%;
+}
+#bar>div{
+    background: linear-gradient(90.01deg, #9D84B7 17.75%, #22577E 49.75%, #000000 84.54%), #9D84B7;
+    border-radius: 10px;
+    padding: 2%;
+    width: 90%;
+}
+#bar>.tw{
+    width: 75%;
+}
+.slideButton{
+    display: none;
+}
+
+/*              Work              */
+.work{
+    padding: 10%;
+}
+.work h4{
+    color: #22577E;
+    font-weight: 900;
+    font-size: 20px;
+}
+.work h3{
+    font-size: 60px;
+    font-weight: 900;
+    margin: 2% 0;
+    width: 30%;
+}
+.p{
+    width: 70%;
+    font-size: 20px;
+    margin-bottom: 5%;
+
+}
+.work div p span{
+    color: #9D84B7;
+    font-weight: 900;
+}
+.work div p{
+    font-weight: 700;
+    margin: 2em 0 1em;
+}
+.images{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.images div img{vertical-align: top;}
+.blocFour{ 
+    flex-direction: column;
+    display: flex;
+}
+.one, .ttwo, .tthree{ height: 100%;}
+.blocOne, .blocTwo, .blocThree{display: flex;}
+div img.ttwo, div img.tthree{
+    width: 100%;
+    height: 100%;
+}
+.blocOne div{
+    display: flex;
+    flex-direction: column;
+}
+div img.two, div img.three{width: 100%;}
+div img.four{width: 100%; height: 100%;}
+.fs{
+    display: flex;
+    width: 50%;
+}
+
+/*              Blog              */
+.blog{
+    padding: 12% 15%;
+    background-color: #D5D5D5;
+    position: relative;
+}
+.blog .top{
+    display: flex;
+}
+.blog figure img{
+    width: 100%;
+    height: 100%;
+}
+.top figcaption{
+    margin: 0 0 0 5%;
+    /* display: flex;
+    flex-direction: column; */
+}
+.top figcaption h4{
+    color: #22577E;
+    font-size: 20px;
+    font-weight: normal;
+}
+.top figcaption h3{
+    margin: 3% 0 7%;
+    font-weight: 700;
+    font-size: 60px;
+}
+.top figcaption p{
+    width: 100%;
+    font-size: 20px;
+    line-height: 30px;
+    width: 80%;
+}
+.oNe, .tWo{
+    margin-top: 10%;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    background: linear-gradient(90.01deg, #9D84B7 17.75%, #22577E 49.75%, #000000 84.54%), #9D84B7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 30px;
+    width: 147px;
+    height: 49px;
+    letter-spacing: 1px;
+}
+.blog .bottom{
+    display: flex;
+    margin-top: 10%;
+}
+.blog figure img{
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+.bottom figcaption{
+    margin: 0 0 0 5%;
+    /* display: flex;
+    flex-direction: column; */
+}
+.bottom figcaption h4{
+    color: #22577E;
+    font-size: 20px;
+    font-weight: normal;
+}
+.bottom figcaption h3{
+    margin: 3% 0 7%;
+    font-weight: 700;
+    font-size: 60px;
+}
+.bottom figcaption p{
+    width: 100%;
+    font-size: 20px;
+    line-height: 30px;
+    width: 80%;
+}
+
+/*             Contact            */
+
+.contact figure{
+    display: flex;
+    position: relative;
+}
+.left{
+    width: 60%;
+}
+.right{width: 40%;}
+.contact figure figcaption{
+    position: absolute;
+    color: white;
+    left: 10%;
+    top: 20%;
+    font-size: 20px;
+}
+.contact figure figcaption i{
+    font-style: normal;
+    font-size: 18px;
+}
+.contact h3{
+    font-size: 60px;
+    font-weight: 900;
+    color: #9D84B7;
+    padding: 10px 0 1em;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.contact p{
+    line-height: 38px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*             Footer             */
+footer{
+    padding: 2em 0;
+    background-color: #D5D5D5;
+}
+.ftr{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer{
+    width: 32%;
+}
+.icon{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+footer h3{
+    font-size: 30px;
+    font-weight: 900;
+    color: #22577E;
+    padding-left: 35%;
+}

@@ -1,0 +1,503 @@
+@media only screen and (max-width: 414px){ 
+.menu{
+    display: block;
+}
+header .nav{
+    background: lightgray;
+    position: fixed;
+    /* Pour le faire passer au-dessus de la position absolute des éléments de la banner */
+    z-index:9998;
+    top:0;
+    right:0;
+    width: 60%;
+    height: auto;
+    transform: translateX(1000%);
+    transition: 0.5s;
+}
+header .nav ul{
+    flex-direction: column;
+}
+ul li a{
+    background-color: transparent;
+}
+.list li a:hover{ 
+    background: linear-gradient(90deg, #9D84B7 5%, #22577E 53.65%, #01D1FF 100%);
+    color: #fff;
+    transition: 0.5s; 
+}
+
+/*             Banner             */
+.banner{min-height: 30vh;}
+.banner .title h2{
+    font-size: 16px;
+}
+.banner .title span{
+    font-size: 25px;
+}
+.title{
+    top: 10%;
+    left: 30%;
+}
+.un, .deux, .trois{
+    top: 25%;
+    height: 5px;
+    width: 5px;
+}
+
+/*             About¹             */
+.about{
+    padding-left: 6%;
+}
+.ab h3{
+    font-size: 20px;
+    width: 100%;
+    text-shadow: none;
+    line-height: normal;
+}
+.ab{
+    display: block;
+}
+.pa{
+    margin-top: 10%;
+    position: static;
+    width: 100%;
+}
+.ab .pa p, .about h4{
+    font-size: 12px;
+}
+.design{
+    padding-top: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.abt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.abt div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 20%;
+    margin-right: 10px;
+    
+}
+.abt h3, .abt h4{
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+.abt p{
+    width: 70%;
+    font-size: 12px;
+}
+
+/*             About²             */
+.About{min-height: 25vh;}
+.titl{
+    left: 10%;
+    top: 15%;
+}
+.About h4, .About p{
+    font-size: 10px;
+    line-height: normal;
+}
+.About h3{
+    font-size: 15px;
+    padding: 7px 0;
+}
+
+.team article{
+    display: none;
+}
+
+/*              Team              */
+.beginning{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team h4{
+    font-size: 12px;
+}
+.team h3{
+    font-size: 30px;
+    margin: 10px 0 15px;
+    text-align: center;
+}
+.team p{
+    font-size: 12px;
+    width: 80%;
+    line-height: 20px;
+}
+.team article{
+    display: block;
+
+}
+.team article figure{
+    width: 100%;
+    margin-left: 15%;
+}
+.team article figure h3{
+    width: 100%;
+    font-size: 20px;
+    padding: 1%;
+    margin: 0;
+}
+.team article figure h4{
+    font-size: 14px;
+}
+.team article figure{
+    width: 70%;
+}
+.itm img{
+    width: 99%;
+}
+
+/*              Work              */
+.work{
+    padding: 0;
+}
+.work h4, .work p{
+    font-size: 12px;
+    padding: 1em 2em;
+}
+.work h3{
+    font-size: 20px;
+    width: 90%;
+    margin: 0;
+    padding: 0 1em;
+}
+.work p{
+    width: 100%;
+}
+.work div p{
+    font-size: 10px;
+}
+.images{
+    display: block;
+    width: 100%;
+}
+.blocOne, .blocTwo, .blocThree, .blocFour{
+    width: 100%;
+}
+.one{
+    width: 50%;
+}
+.five, .six{width: 100%;}
+div img.two, div img.three, div img.ttwo, div img.tthree, div img.four {
+    width: 100%;
+}
+
+/*              Blog              */
+.blog{
+    padding: 2em 0 0 0;
+}
+.blog .top{
+    display: block;
+}
+.oNe, .tWo{
+    width: 100px;
+    height: 30px;
+    left: 128px;
+    top: 1383px;
+}
+button{
+    font-size: 9px !important;
+}
+.blog figcaption{
+    margin: 0;
+    padding: 30px;
+}
+.blog .top figcaption h4, .top figcaption p, .bottom figcaption h4, .bottom figcaption p{
+    font-size: 12px ;
+    line-height: 20px;
+}
+.blog .top figcaption h3, .bottom figcaption h3{
+    font-size: 20px;
+}
+.blog .bottom{
+    display: block;
+}
+
+/*             Contact            */
+.contact figure{
+    flex-wrap: wrap;
+}
+.contact img{
+    width: 100%;
+}
+.contact figure figcaption{
+    top: auto;
+    bottom: 25%;
+    left: 1em;
+    color: black;
+}
+.contact figure figcaption i, .contact figure figcaption h3{
+    font-size: 12px;
+}
+.contact figure figcaption h3{
+    font-size: 20px;
+}
+.contact figure figcaption p{
+    font-size: 12px;
+    line-height: normal;
+}
+
+/*             Footer             */
+footer{
+    padding: 1em 0;
+    background-color: #D5D5D5;
+}
+.ftr{
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.footer{
+    width: 100%;
+}
+.icon{
+    padding-bottom: 1em;
+    font-size: 10px;
+    justify-content: center;
+    gap: 15px;
+}
+footer h3{
+    font-size: 18px;
+    padding: 0 5% 2% 2%;
+}
+footer p{
+    font-size: 10px;
+    margin-bottom: 1em;
+}
+}
+
+
+
+
+@media only screen and (min-width: 415px) and (max-width:768px){ 
+.menu{
+    display: block;
+}
+header .nav{
+    background: lightgray;
+    position: fixed;
+    /* Pour le faire passer au-dessus de la position absolute des éléments de la banner */
+    z-index:9998;
+    top:0;
+    right:0;
+    width: 50%;
+    height: auto;
+    transform: translateX(1000%);
+    transition: 0.5s;
+}
+header .nav ul{
+    flex-direction: column;
+}
+ul li a{
+    background-color: transparent;
+}
+.list li a:hover{ 
+    background: linear-gradient(90deg, #9D84B7 5%, #22577E 53.65%, #01D1FF 100%);
+    color: #fff;
+    transition: 0.5s; 
+}
+
+/*             Banner             */
+.banner{min-height: 40vh;}
+.title{
+    z-index: 1;
+    top: 10%;
+    left: 30%;
+}
+.title h2{
+    font-size: 40px;
+}
+.title span{
+    font-size: 50px;
+}
+.un, .deux, .trois{
+    top: 30%;
+}
+.un{left: 44%;}
+.deux{left: 48%;}
+.trois{left: 52%;}
+
+/*             About¹             */
+.about{
+    padding: 5%;
+}
+.ab{
+    display: block;
+}
+.ab h3{
+    width: 55%;
+    padding-bottom: 1em;
+}
+.ab .pa{
+    position: static;
+    width: 100%;
+}
+.ab .pa p{
+    width: 100%;
+    padding-bottom: 0;
+}
+.design{
+    gap: 3em;
+}
+.abt h4{
+    font-size: 20px;
+    margin: 5px 0 0 0;
+}
+.abt h3{
+    font-size: 25px;
+}
+
+/*             About²             */
+.titl h4, .titl p{
+    font-size: 16px;
+}
+.titl h3{
+    font-size: 29px;
+}
+
+/*              Team              */
+.team{
+    align-items: inherit;
+}
+.beginning{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team h4, .team p{
+    font-size: 16px;
+}
+.team h3{
+    font-size: 45px;
+    padding: 15px 0;
+}
+.team p{
+    width: 80%;
+}
+.team article{
+    display: block;
+}
+.carousel article figure div{
+    display: flex;
+}
+
+.tit{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 60%;
+}
+.team article figure{
+    width: 95%;
+}
+.team article figure figcaption{
+    width:90%;
+    margin: 0 21px;
+}
+
+/*              Work              */
+.work{
+    padding: 0;
+}
+.work h4{
+    font-size: 16px;
+    padding: 5% 0 0 10%;
+}
+
+.work p{
+    font-size: 16px;
+    padding: 0 10%;
+    width: 100%;
+}
+.work h3{
+    font-size: 40px;
+    width: 60%;
+    padding: 0 0 0 10%;
+}
+.work div p{
+    font-size: 14px;
+}
+div img.two, div img.three{
+    width: 100%;
+}
+
+/*              Blog              */
+.images{justify-content: center;}
+.blog{
+    padding: 5% 0%;
+}
+.blog figure img{
+    width: 50%;
+}
+.blog figure figcaption h4, .blog figure figcaption p{
+    font-size: 14px;
+    line-height: 20px;
+}
+.blog figure figcaption h3{
+    font-size: 25px;
+    margin: 5px 0 20px;
+}
+.oNe, .tWo{
+    width: 120px;
+    height: 37px;
+    left: 128px;
+    top: 1383px;
+}
+button{
+    font-size: 12px !important;
+}
+
+/*             Contact            */
+.contact img{
+    width: 50%;
+    vertical-align: top;
+}
+.contact img.left{
+    width: 100%;
+}
+.contact figure{
+    display: block;
+}
+.contact figure figcaption{
+    color: black;
+    right: 0%;
+    left: 52%;
+    top: auto;
+    bottom: 10%;
+}
+.contact figure figcaption i, .contact figure figcaption p{
+    font-size: 16px;
+}
+.contact figure figcaption h3{
+    font-size: 29px;
+}
+
+/*             Footer             */
+footer{
+    padding: 2em;
+}
+.ftr{
+    width: 100%;
+}
+.icon{
+    /* justify-content: center; */
+    gap: 15px;
+}
+.footer{
+    width: 100%;
+}
+footer h3{
+    padding: 0 33% 0 0;
+    
+}
+}
